@@ -1,6 +1,5 @@
 package com.example.espeo.datasource.remote
 
-import com.example.espeo.core.mapper.ListMapper
 import com.example.espeo.core.mapper.Mapper
 import com.example.espeo.data.datasource.RemoteStudentDataSource
 import com.example.espeo.datasource.model.NetworkStudent
@@ -14,7 +13,14 @@ class RemoteStudentDataSourceImpl constructor(
 
     override fun get(): Single<List<Student>> {
         return studentApi.getStudents().map{
+            mapNetworkStudent(it)
+        }
+    }
+
+    private fun mapNetworkStudent(networkStudentList: List<NetworkStudent>): List<Student> {
+        return networkStudentList.map{
             networkStudentMapper.map(it)
         }
     }
+
 }

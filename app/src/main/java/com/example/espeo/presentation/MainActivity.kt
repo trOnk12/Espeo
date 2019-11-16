@@ -1,7 +1,8 @@
-package com.example.espeo
+package com.example.espeo.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.espeo.R
 
 class MainActivity : AppCompatActivity() {
 
