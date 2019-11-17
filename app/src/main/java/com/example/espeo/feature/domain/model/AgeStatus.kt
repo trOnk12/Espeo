@@ -1,4 +1,4 @@
-package com.example.espeo.domain.model
+package com.example.espeo.feature.domain.model
 
 enum class AgeStatus {
     IS_UNDERAGE,

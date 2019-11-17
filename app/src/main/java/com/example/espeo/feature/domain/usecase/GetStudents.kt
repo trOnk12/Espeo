@@ -1,6 +1,6 @@
-package com.example.espeo.domain.usecase
+package com.example.espeo.feature.domain.usecase
 
-import com.example.espeo.domain.repository.StudentRepository
+import com.example.espeo.feature.domain.repository.StudentRepository
 import javax.inject.Inject
 
 class GetStudents

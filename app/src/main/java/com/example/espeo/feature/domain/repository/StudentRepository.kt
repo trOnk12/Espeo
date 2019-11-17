@@ -1,6 +1,6 @@
-package com.example.espeo.domain.repository
+package com.example.espeo.feature.domain.repository
 
-import com.example.espeo.domain.model.Student
+import com.example.espeo.feature.domain.model.Student
 import io.reactivex.Single
 
 interface StudentRepository {

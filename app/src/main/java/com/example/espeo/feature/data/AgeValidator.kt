@@ -1,4 +1,4 @@
-package com.example.espeo.data
+package com.example.espeo.feature.data
 
 import java.util.*
 

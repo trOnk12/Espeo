@@ -1,4 +1,4 @@
-package com.example.espeo.datasource.model
+package com.example.espeo.feature.datasource.model
 
 import com.google.gson.annotations.SerializedName
 

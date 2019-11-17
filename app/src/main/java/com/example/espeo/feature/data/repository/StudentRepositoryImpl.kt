@@ -1,8 +1,8 @@
-package com.example.espeo.data.repository
+package com.example.espeo.feature.data.repository
 
-import com.example.espeo.data.datasource.StudentRemoteDataSource
-import com.example.espeo.domain.model.Student
-import com.example.espeo.domain.repository.StudentRepository
+import com.example.espeo.feature.data.datasource.StudentRemoteDataSource
+import com.example.espeo.feature.domain.model.Student
+import com.example.espeo.feature.domain.repository.StudentRepository
 import io.reactivex.Single
 import javax.inject.Inject
 

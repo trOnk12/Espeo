@@ -1,10 +1,10 @@
-package com.example.espeo.datasource.mapper
+package com.example.espeo.feature.datasource.mapper
 
 import com.example.espeo.core.mapper.Mapper
-import com.example.espeo.data.AgeValidator
-import com.example.espeo.datasource.model.NetworkStudent
-import com.example.espeo.domain.model.AgeStatus
-import com.example.espeo.domain.model.Student
+import com.example.espeo.feature.data.AgeValidator
+import com.example.espeo.feature.datasource.model.NetworkStudent
+import com.example.espeo.feature.domain.model.AgeStatus
+import com.example.espeo.feature.domain.model.Student
 import javax.inject.Inject
 
 class NetworkStudentMapper
