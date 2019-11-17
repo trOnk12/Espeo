@@ -35,9 +35,9 @@ class StudentListAdapter
 
         fun bind(studentItem: StudentItem) {
             with(studentItem) {
-                itemView.name.text = name
-                itemView.status.text = studentStatus
-                itemView.majority.text = majorityStatus
+                itemView.name.text = "Student name : $name"
+                itemView.status.text = "Student status :  $studentStatus"
+                itemView.majority.text = "Student majority : $majorityStatus"
             }
         }
     }
