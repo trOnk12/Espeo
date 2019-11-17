@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.example.espeo">
+          xmlns:tools="http://schemas.android.com/tools" package="com.example.espeo">
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application
             android:allowBackup="true"
@@ -9,7 +11,7 @@
             android:name=".AndroidApplication"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme" tools:ignore="GoogleAppIndexingWarning">
         <activity android:name="com.example.espeo.feature.presentation.StudentListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
