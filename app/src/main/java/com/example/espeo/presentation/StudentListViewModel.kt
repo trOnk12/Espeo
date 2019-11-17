@@ -5,8 +5,12 @@ import com.example.espeo.core.platform.BaseViewModel
 import com.example.espeo.domain.model.Student
 import com.example.espeo.domain.usecase.GetStudents
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class StudentListViewModel(private val getStudents: GetStudents) : BaseViewModel() {
+class StudentListViewModel
+@Inject constructor(
+    private val getStudents: GetStudents
+) : BaseViewModel() {
 
     private val studentListLiveData: MutableLiveData<List<Student>> = MutableLiveData()
 

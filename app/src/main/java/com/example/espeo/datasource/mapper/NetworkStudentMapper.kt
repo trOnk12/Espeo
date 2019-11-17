@@ -5,8 +5,10 @@ import com.example.espeo.data.AgeValidator
 import com.example.espeo.datasource.model.NetworkStudent
 import com.example.espeo.domain.model.AgeStatus
 import com.example.espeo.domain.model.Student
+import javax.inject.Inject
 
-class NetworkStudentMapper : Mapper<NetworkStudent, Student> {
+class NetworkStudentMapper
+@Inject constructor() : Mapper<NetworkStudent, Student> {
 
     override fun map(input: NetworkStudent): Student {
         return input.run {
