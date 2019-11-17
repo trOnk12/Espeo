@@ -5,12 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.espeo.R
-import com.example.espeo.feature.domain.model.AgeStatus
-import com.example.espeo.feature.domain.model.Student
 import com.example.espeo.feature.presentation.model.StudentItem
-import kotlin.properties.Delegates
 import kotlinx.android.synthetic.main.student_list_item.view.*
 import javax.inject.Inject
+import kotlin.properties.Delegates
 
 class StudentListAdapter
 @Inject constructor() : RecyclerView.Adapter<StudentListAdapter.ViewHolder>() {

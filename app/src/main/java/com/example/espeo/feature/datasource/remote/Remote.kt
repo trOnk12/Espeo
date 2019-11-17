@@ -1,7 +1,6 @@
 package com.example.espeo.feature.datasource.remote
 
 import com.example.espeo.feature.datasource.model.NetworkStudent
-import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.http.GET
 

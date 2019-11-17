@@ -7,21 +7,7 @@ data class StudentItem(
     val name: String,
     val studentStatus: String,
     val majorityStatus: String
-) {
-    override fun equals(other: Any?): Boolean {
-        if (other == this) return true
-        if (other !is StudentItem) return false
-
-        val studentItem: StudentItem = other
-
-        return (studentItem.equals(name))
-    }
-
-    override fun hashCode(): Int {
-        return 0
-    }
-
-}
+)
 
 fun List<Student>.mapToPresentation(): List<StudentItem> =
     map { StudentItem(it.name, determineStudentStatus(it.isStudent), determineMajority(it.ageStatus)) }
