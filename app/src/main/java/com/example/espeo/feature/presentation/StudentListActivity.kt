@@ -38,4 +38,5 @@ class StudentListActivity : BaseActivity() {
             studentListAdapter.studentList = it
         }
     }
+
 }

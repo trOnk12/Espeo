@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface StudentApi {
 
-    @GET
+    @GET("v2/5db2e026350000a91af5527c")
     fun getStudents(): Single<List<NetworkStudent>>
 
 }
