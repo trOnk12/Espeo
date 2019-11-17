@@ -1,4 +1,4 @@
-package com.example.espeo.feature.presentation
+package com.example.espeo.feature.presentation.studentlist
 
 import android.os.Bundle
 import androidx.lifecycle.Observer

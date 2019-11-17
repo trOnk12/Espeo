@@ -5,7 +5,7 @@ import com.example.espeo.core.di.modules.AppModule
 import com.example.espeo.core.di.modules.NetworkModule
 import com.example.espeo.core.di.modules.RepositoryModule
 import com.example.espeo.core.di.viewmodel.ViewModelModule
-import com.example.espeo.feature.presentation.StudentListActivity
+import com.example.espeo.feature.presentation.studentlist.StudentListActivity
 import dagger.Component
 import javax.inject.Singleton
 

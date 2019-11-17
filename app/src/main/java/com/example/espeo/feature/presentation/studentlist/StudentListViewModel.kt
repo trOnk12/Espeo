@@ -1,4 +1,4 @@
-package com.example.espeo.feature.presentation
+package com.example.espeo.feature.presentation.studentlist
 
 import androidx.lifecycle.MutableLiveData
 import com.example.espeo.core.extension.setError
