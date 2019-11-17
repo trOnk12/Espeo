@@ -8,7 +8,7 @@ class AgeValidator {
         get() = Calendar.getInstance().get(Calendar.YEAR)
 
         fun isAdult(majorityAge: Int, yearOfBirth: Int): Boolean {
-             return (majorityAge >= (yearOfBirth - currentYear))
+             return (majorityAge < (currentYear - yearOfBirth))
         }
     }
 }
