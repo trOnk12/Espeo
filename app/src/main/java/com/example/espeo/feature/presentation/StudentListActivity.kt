@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.espeo.R
 import com.example.espeo.core.platform.BaseActivity
 import com.example.espeo.feature.domain.model.Student
+import com.example.espeo.feature.presentation.model.StudentItem
 import kotlinx.android.synthetic.main.student_list_activity.*
 import javax.inject.Inject
 
@@ -33,7 +34,7 @@ class StudentListActivity : BaseActivity() {
 
     }
 
-    private fun showStudentList(studentList: List<Student>?) {
+    private fun showStudentList(studentList: List<StudentItem>?) {
         studentList?.let {
             studentListAdapter.studentList = it
         }

@@ -1,7 +1,7 @@
 package com.example.espeo.feature.datasource.mapper
 
 import com.example.espeo.core.mapper.Mapper
-import com.example.espeo.feature.data.AgeValidator
+import com.example.espeo.core.utils.AgeValidator
 import com.example.espeo.feature.datasource.model.NetworkStudent
 import com.example.espeo.feature.domain.model.AgeStatus
 import com.example.espeo.feature.domain.model.Student
