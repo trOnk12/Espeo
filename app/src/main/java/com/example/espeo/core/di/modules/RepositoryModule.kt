@@ -2,11 +2,13 @@ package com.example.espeo.core.di.modules
 
 import com.example.espeo.core.mapper.Mapper
 import com.example.espeo.feature.data.datasource.StudentRemoteDataSource
+import com.example.espeo.feature.data.repository.StudentRepositoryImpl
 import com.example.espeo.feature.datasource.mapper.NetworkStudentMapper
 import com.example.espeo.feature.datasource.model.NetworkStudent
 import com.example.espeo.feature.datasource.remote.StudentApi
 import com.example.espeo.feature.datasource.remote.StudentRemoteDataSourceImpl
 import com.example.espeo.feature.domain.model.Student
+import com.example.espeo.feature.domain.repository.StudentRepository
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -34,6 +36,12 @@ class RepositoryModule {
         mapper: Mapper<NetworkStudent, Student>
     ): StudentRemoteDataSource {
         return StudentRemoteDataSourceImpl(studentApi, mapper)
+    }
+
+    @Singleton
+    @Provides
+    fun provideStudentRepository(studentRemoteDataSource: StudentRemoteDataSource): StudentRepository {
+        return StudentRepositoryImpl(studentRemoteDataSource)
     }
 
 }
