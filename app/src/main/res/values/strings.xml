@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Espeo</string>
+    <string name="student_name">"Student name: %1$s"</string>
+    <string name="student_status">"Student status: %1$s"</string>
+    <string name="student_majority">"Student majority: %1$s"</string>
 </resources>

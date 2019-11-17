@@ -1,5 +1,6 @@
 package com.example.espeo.feature.presentation
 
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -33,9 +34,9 @@ class StudentListAdapter
 
         fun bind(studentItem: StudentItem) {
             with(studentItem) {
-                itemView.name.text = "Student name : $name"
-                itemView.status.text = "Student status :  $studentStatus"
-                itemView.majority.text = "Student majority : $majorityStatus"
+                itemView.name.text = itemView.context.resources.getString(R.string.student_name, name)
+                itemView.status.text = itemView.context.resources.getString(R.string.student_status, studentStatus)
+                itemView.majority.text = itemView.context.resources.getString(R.string.student_majority, majorityStatus)
             }
         }
     }
