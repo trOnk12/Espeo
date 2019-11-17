@@ -4,6 +4,10 @@ import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.espeo.R
+import com.example.espeo.core.extension.startRefreshing
+import com.example.espeo.core.extension.stopRefreshing
+import com.example.espeo.core.functional.Resource
+import com.example.espeo.core.functional.ResourceState
 import com.example.espeo.core.platform.BaseActivity
 import com.example.espeo.feature.presentation.model.StudentItem
 import kotlinx.android.synthetic.main.student_list_activity.*
@@ -29,10 +33,8 @@ class StudentListActivity : BaseActivity() {
     }
 
     private fun initializeView() {
-
-        swipeRefreshLayout.setOnRefreshListener { studentListViewModel.getStudents() }
-
         studentListView.adapter = studentListAdapter
+        swipeRefreshLayout.setOnRefreshListener { studentListViewModel.getStudents() }
 
         studentListViewModel = ViewModelProviders
             .of(this, viewModelFactory)[StudentListViewModel::class.java]
@@ -40,10 +42,14 @@ class StudentListActivity : BaseActivity() {
         studentListViewModel.studentList.observe(this, Observer(::showStudentList))
     }
 
-    private fun showStudentList(studentList: List<StudentItem>?) {
-        studentList?.let {
-            studentListAdapter.studentList = it
+    private fun showStudentList(resource: Resource<List<StudentItem>>?) {
+        resource?.let {
+            when (resource.state) {
+                ResourceState.SUCCESS, ResourceState.ERROR -> swipeRefreshLayout.stopRefreshing()
+                ResourceState.LOADING -> swipeRefreshLayout.startRefreshing()
+            }
         }
     }
+
 
 }
