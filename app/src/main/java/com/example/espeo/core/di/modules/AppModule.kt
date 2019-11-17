@@ -1,4 +1,4 @@
-package com.example.espeo.core.di
+package com.example.espeo.core.di.modules
 
 import android.content.Context
 import com.example.espeo.AndroidApplication
