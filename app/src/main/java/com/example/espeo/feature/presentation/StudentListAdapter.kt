@@ -5,10 +5,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.espeo.R
+import com.example.espeo.feature.domain.model.AgeStatus
 import com.example.espeo.feature.domain.model.Student
 import kotlin.properties.Delegates
+import kotlinx.android.synthetic.main.student_list_item.view.*
+import javax.inject.Inject
 
-class StudentListAdapter : RecyclerView.Adapter<StudentListAdapter.ViewHolder>() {
+class StudentListAdapter
+@Inject constructor() : RecyclerView.Adapter<StudentListAdapter.ViewHolder>() {
 
     var studentList: List<Student> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
@@ -26,10 +30,16 @@ class StudentListAdapter : RecyclerView.Adapter<StudentListAdapter.ViewHolder>()
 
     override fun getItemCount() = studentList.size
 
-    class ViewHolder(studentView: View) : RecyclerView.ViewHolder(studentView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(student: Student) {
             with(student) {
+                itemView.name.text = name
+                itemView.status.text = if (isStudent) "Student" else "Not student"
+                itemView.majority.text = when (ageStatus) {
+                    AgeStatus.IS_NOT_UNDERAGE -> "Adult"
+                    AgeStatus.IS_UNDERAGE -> "Not adult"
+                }
             }
         }
     }
