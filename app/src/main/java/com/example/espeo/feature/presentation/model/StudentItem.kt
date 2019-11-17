@@ -7,18 +7,32 @@ data class StudentItem(
     val name: String,
     val studentStatus: String,
     val majorityStatus: String
-)
+) {
+    override fun equals(other: Any?): Boolean {
+        if (other == this) return true
+        if (other !is StudentItem) return false
+
+        val studentItem: StudentItem = other
+
+        return (studentItem.equals(name))
+    }
+
+    override fun hashCode(): Int {
+        return 0
+    }
+
+}
 
 fun List<Student>.mapToPresentation(): List<StudentItem> =
     map { StudentItem(it.name, determineStudentStatus(it.isStudent), determineMajority(it.ageStatus)) }
 
 private fun determineMajority(ageStatus: AgeStatus): String {
     return when (ageStatus) {
-        AgeStatus.IS_UNDERAGE -> "Not adult"
-        AgeStatus.IS_NOT_UNDERAGE -> "Adult"
+        AgeStatus.IS_UNDERAGE -> "not adult"
+        AgeStatus.IS_NOT_UNDERAGE -> "adult"
     }
 }
 
 private fun determineStudentStatus(student: Boolean): String {
-    return if (student) "Student" else "Not Student"
+    return if (student) "student" else "not student"
 }

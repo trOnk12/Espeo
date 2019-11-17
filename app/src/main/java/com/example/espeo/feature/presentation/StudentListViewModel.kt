@@ -2,7 +2,6 @@ package com.example.espeo.feature.presentation
 
 import androidx.lifecycle.MutableLiveData
 import com.example.espeo.core.platform.BaseViewModel
-import com.example.espeo.feature.domain.model.Student
 import com.example.espeo.feature.domain.usecase.GetStudents
 import com.example.espeo.feature.presentation.model.StudentItem
 import com.example.espeo.feature.presentation.model.mapToPresentation
@@ -15,7 +14,7 @@ class StudentListViewModel
     private val getStudents: GetStudents
 ) : BaseViewModel() {
 
-     val studentList: MutableLiveData<List<StudentItem>> = MutableLiveData()
+    val studentList: MutableLiveData<List<StudentItem>> = MutableLiveData()
 
     fun getStudents() {
         compositeDisposable.add(

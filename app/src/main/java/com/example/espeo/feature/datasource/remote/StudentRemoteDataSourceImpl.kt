@@ -4,6 +4,7 @@ import com.example.espeo.core.mapper.Mapper
 import com.example.espeo.feature.data.datasource.StudentRemoteDataSource
 import com.example.espeo.feature.datasource.model.NetworkStudent
 import com.example.espeo.feature.domain.model.Student
+import io.reactivex.Observable
 import io.reactivex.Single
 import javax.inject.Inject
 
