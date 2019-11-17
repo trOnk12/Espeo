@@ -48,8 +48,11 @@ class StudentListActivity : BaseActivity() {
                 ResourceState.SUCCESS, ResourceState.ERROR -> swipeRefreshLayout.stopRefreshing()
                 ResourceState.LOADING -> swipeRefreshLayout.startRefreshing()
             }
+            it.data?.let { studentList ->
+                studentListAdapter.studentList = studentList
+            }
+            it.message?.let { message -> showToast(message) }
         }
     }
-
 
 }
