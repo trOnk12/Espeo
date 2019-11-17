@@ -5,7 +5,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.espeo.R
 import com.example.espeo.core.platform.BaseActivity
-import com.example.espeo.feature.domain.model.Student
 import com.example.espeo.feature.presentation.model.StudentItem
 import kotlinx.android.synthetic.main.student_list_activity.*
 import javax.inject.Inject
@@ -21,17 +20,24 @@ class StudentListActivity : BaseActivity() {
         setContentView(R.layout.student_list_activity)
         appComponent.inject(this)
 
+        initializeView()
+
+        if (savedInstanceState == null) {
+            studentListViewModel.getStudents()
+        }
+
+    }
+
+    private fun initializeView() {
+
+        swipeRefreshLayout.setOnRefreshListener { studentListViewModel.getStudents() }
+
         studentListView.adapter = studentListAdapter
 
         studentListViewModel = ViewModelProviders
             .of(this, viewModelFactory)[StudentListViewModel::class.java]
 
         studentListViewModel.studentList.observe(this, Observer(::showStudentList))
-
-        if (savedInstanceState == null) {
-            studentListViewModel.getStudents()
-        }
-
     }
 
     private fun showStudentList(studentList: List<StudentItem>?) {
