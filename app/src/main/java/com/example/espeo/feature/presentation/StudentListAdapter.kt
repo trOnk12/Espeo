@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.espeo.R
 import com.example.espeo.feature.domain.model.AgeStatus
 import com.example.espeo.feature.domain.model.Student
+import com.example.espeo.feature.presentation.model.StudentItem
 import kotlin.properties.Delegates
 import kotlinx.android.synthetic.main.student_list_item.view.*
 import javax.inject.Inject
@@ -14,7 +15,7 @@ import javax.inject.Inject
 class StudentListAdapter
 @Inject constructor() : RecyclerView.Adapter<StudentListAdapter.ViewHolder>() {
 
-    var studentList: List<Student> by Delegates.observable(emptyList()) { _, _, _ ->
+    var studentList: List<StudentItem> by Delegates.observable(emptyList()) { _, _, _ ->
         notifyDataSetChanged()
     }
 
@@ -32,14 +33,11 @@ class StudentListAdapter
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        fun bind(student: Student) {
-            with(student) {
+        fun bind(studentItem: StudentItem) {
+            with(studentItem) {
                 itemView.name.text = name
-                itemView.status.text = if (isStudent) "Student" else "Not student"
-                itemView.majority.text = when (ageStatus) {
-                    AgeStatus.IS_NOT_UNDERAGE -> "Adult"
-                    AgeStatus.IS_UNDERAGE -> "Not adult"
-                }
+                itemView.status.text = studentStatus
+                itemView.majority.text = majorityStatus
             }
         }
     }
