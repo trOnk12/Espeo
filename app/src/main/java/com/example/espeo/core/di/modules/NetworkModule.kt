@@ -12,7 +12,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Named
 import javax.inject.Singleton
 
-
 @Module
 class NetworkModule {
 
@@ -29,8 +28,7 @@ class NetworkModule {
 
     @Singleton
     @Provides
-    @Named("google")
-    fun provideGoogleClient(httpClient: OkHttpClient): Retrofit {
+    fun provideRetrofit(httpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(httpClient)
@@ -38,6 +36,5 @@ class NetworkModule {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
     }
-
 
 }
